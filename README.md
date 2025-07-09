@@ -86,7 +86,7 @@ CareerBot: *"That's great! To start in AI/ML, begin with Python, then explore li
 ---
 
 ## 🙌 Credits
-- Built by [Surud Mahajan]
+- Built by **Surud Mahajan**
 - Inspired by OpenAI API projects and the power of open-source AI tools
 
 ---
