@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, jsonify
 import requests
+import os
 
 app = Flask(__name__)
 
-OPENROUTER_API_KEY = "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"  # 🔁 Put your actual key here
+OPENROUTER_API_KEY = os.getenv("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")
 MODEL = "mistralai/mistral-7b-instruct"
 
 @app.route("/")
@@ -17,7 +18,7 @@ def ask():
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://yourdomain.com",
+        "Referer": "https://careerbot.onrender.com",  # Replace with your actual domain if needed
         "X-Title": "CareerBotWeb"
     }
 
@@ -35,8 +36,6 @@ def ask():
     except Exception as e:
         print("Error:", e)
         return jsonify({"reply": "Sorry, something went wrong!"})
-
-import os
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
