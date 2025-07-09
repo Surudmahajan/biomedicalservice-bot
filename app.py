@@ -4,8 +4,9 @@ import os
 
 app = Flask(__name__)
 
-OPENROUTER_API_KEY = os.getenv("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")
-MODEL = "openchat/openchat-3.5-0106"
+# Get API key from environment
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+MODEL = "mistralai/mistral-7b-instruct"  # You can change model here
 
 @app.route("/")
 def home():
@@ -14,11 +15,13 @@ def home():
 @app.route("/ask", methods=["POST"])
 def ask():
     user_msg = request.json.get("message")
+    print("User Message:", user_msg)
+    print("API Key present:", OPENROUTER_API_KEY is not None)
 
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
-        "Referer": "https://careerbot.onrender.com",  # Replace with your actual domain if needed
+        "Referer": "https://careerbot.onrender.com",  # Replace with your domain if needed
         "X-Title": "CareerBotWeb"
     }
 
@@ -29,13 +32,18 @@ def ask():
     }
 
     try:
-        res = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=payload)
-        res.raise_for_status()
-        reply = res.json()["choices"][0]["message"]["content"]
+        response = requests.post("https://openrouter.ai/api/v1/chat/completions",
+                                 headers=headers, json=payload)
+        print("Status Code:", response.status_code)
+        print("Response:", response.text)
+
+        response.raise_for_status()
+
+        reply = response.json()["choices"][0]["message"]["content"]
         return jsonify({"reply": reply})
     except Exception as e:
-        print("Error:", e)
-        return jsonify({"reply": "Sorry, something went wrong!"})
+        print("ERROR:", e)
+        return jsonify({"reply": "Sorry, something went wrong."})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
