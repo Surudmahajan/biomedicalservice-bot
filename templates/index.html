@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareerBot – AI Career Guide</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="chat-wrapper">
+    <header>🎓 CareerBot – Your AI Career Mentor</header>
+
+    <div id="chatBox" class="chat-box">
+      <!-- Messages appear here -->
+    </div>
+
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Ask about your career path..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById("userInput");
+      const chatBox = document.getElementById("chatBox");
+      const message = input.value.trim();
+      if (!message) return;
+
+      chatBox.innerHTML += `
+        <div class="message user">
+          <div class="avatar user-avatar">🧑</div>
+          <div class="text">${message}</div>
+        </div>`;
+      input.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      const response = await fetch("/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message })
+      });
+
+      const data = await response.json();
+      chatBox.innerHTML += `
+        <div class="message bot">
+          <div class="avatar bot-avatar">🤖</div>
+          <div class="text">${data.reply}</div>
+        </div>`;
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    document.getElementById("userInput").addEventListener("keydown", function(e) {
+      if (e.key === "Enter") sendMessage();
+    });
+  </script>
+</body>
+</html>
