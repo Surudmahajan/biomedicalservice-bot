@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 OPENROUTER_API_KEY = os.getenv("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")
-MODEL = "mistralai/mistral-7b-instruct"
+MODEL = "openchat/openchat-3.5-0106"
 
 @app.route("/")
 def home():
