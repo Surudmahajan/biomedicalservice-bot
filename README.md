@@ -72,14 +72,14 @@ Visit `http://localhost:10000`
 ---
 
 ## 🧪 Sample Prompt
-User: *"Hi CareerBot, I’m interested in AI/ML but don’t know where to start. Any suggestions?"*
+User: *"I'm feeling lightheaded and dizzy after standing up. What could be the reason?"*
 
-CareerBot: *"That's great! To start in AI/ML, begin with Python, then explore libraries like NumPy, Pandas, and Scikit-Learn..."*
+Biomedical Service Bot: *"It could be due to a condition called orthostatic hypotension, which occurs when your blood pressure drops upon standing up, causing dizziness and lightheadedness...."*
 
 ---
 
 ## 🌍 Live Demo
-**Check it live at:** []()
+**Check it live at:** [https://biomedicalservice-bot.onrender.com/](https://biomedicalservice-bot.onrender.com/)
 
 > ⚠️ *Note: This site is hosted on Render's free tier and may go offline due to inactivity. Please refresh the page after a few seconds if it appears down.*
 
