@@ -127,14 +127,13 @@
 
 .message.user {
   justify-content: flex-end;
-  margin-left: auto;
+  flex-direction: row-reverse;
   text-align: right;
 }
 
 .message.bot {
   justify-content: flex-start;
   flex-direction: row;
-  margin-right: auto;
   text-align: left;
 }
 
@@ -213,7 +212,7 @@
       const data = await response.json();
       chatBox.innerHTML += `
         <div class="message bot">
-          <div class="avatar bot-avatar">🤖</div>
+          <div class="avatar bot-avatar">🧬</div>
           <div class="text">${data.reply}</div>
         </div>`;
       chatBox.scrollTop = chatBox.scrollHeight;
