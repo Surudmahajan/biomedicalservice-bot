@@ -1,7 +1,8 @@
 
-# 🤖 Biomedical Sevrice Bot
+# 🧬 Biomedical Service Bot
 **Biomedical Service Bot** is a smart AI-powered biomedical guidance chatbot built with **Flask** and **OpenRouter API**, designed to help users receive instant biomedical-related advice and suggestions.
 
+<img width="1365" height="718" alt="image" src="https://github.com/user-attachments/assets/b58e0f2c-91fd-4ace-9a80-e1bddffbb04e" />
 
 
 ---
