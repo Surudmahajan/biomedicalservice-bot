@@ -21,13 +21,20 @@ def ask():
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
-        "Referer": "https://careerbot.onrender.com",  # Replace with your domain if needed
-        "X-Title": "CareerBotWeb"
+        "Referer": "https://example.com",  # Replace with your domain if needed
+        "X-Title": "Biomedical Service Bot"
     }
 
     payload = {
         "model": MODEL,
-        "messages": [{"role": "user", "content": user_msg}],
+        "messages": [
+    {
+        "role": "system",
+        "content": "You are a helpful biomedical service assistant. Answer user questions related to symptoms, medication info, devices, and health guidance in simple, non-diagnostic language."
+    },
+    {"role": "user", "content": user_msg}
+],
+
         "temperature": 0.7
     }
 
