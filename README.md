@@ -1,9 +1,8 @@
 
-# 🤖 CareerBot Web
+# 🤖 Biomedical Sevrice Bot
+**Biomedical Service Bot** is a smart AI-powered biomedical guidance chatbot built with **Flask** and **OpenRouter API**, designed to help users receive instant biomedical-related advice and suggestions.
 
-**CareerBot** is a smart AI-powered career guidance chatbot built with **Flask** and **OpenRouter API**, designed to help users receive instant career-related advice and suggestions.
 
-![image](https://github.com/user-attachments/assets/7f530501-a5c2-47c5-8284-e22cf60238db)
 
 ---
 
@@ -79,7 +78,7 @@ CareerBot: *"That's great! To start in AI/ML, begin with Python, then explore li
 ---
 
 ## 🌍 Live Demo
-**Check it live at:** [https://careerguidancebot.onrender.com/](https://careerguidancebot.onrender.com/)
+**Check it live at:** []()
 
 > ⚠️ *Note: This site is hosted on Render's free tier and may go offline due to inactivity. Please refresh the page after a few seconds if it appears down.*
 
