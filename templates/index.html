@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CareerBot – AI Career Guide</title>
+  <title>Biomedical Service Bot</title>
   <link rel="stylesheet" href="/static/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="chat-wrapper">
-    <header>🎓 CareerBot – Your AI Career Mentor</header>
+    <header>🧬 Biomedical Service Bot</header>
 
     <div id="chatBox" class="chat-box">
       <!-- Messages appear here -->
     </div>
 
     <div class="input-area">
-      <input type="text" id="userInput" placeholder="Ask about your career path..." />
+      <input type="text" id="userInput" placeholder="Ask for biomedical help..." />
       <button onclick="sendMessage()">Send</button>
     </div>
   </div>
@@ -30,7 +30,7 @@
 
       chatBox.innerHTML += `
         <div class="message user">
-          <div class="avatar user-avatar">🧑</div>
+          <div class="avatar user-avatar">😀</div>
           <div class="text">${message}</div>
         </div>`;
       input.value = "";
