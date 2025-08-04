@@ -118,6 +118,60 @@
     button:hover {
       background-color: #005fa3;
     }
+    .message {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px;
+  max-width: 80%;
+}
+
+.message.user {
+  justify-content: flex-end;
+  margin-left: auto;
+  text-align: right;
+}
+
+.message.bot {
+  justify-content: flex-start;
+  margin-right: auto;
+  text-align: left;
+}
+
+.message .avatar {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  font-size: 20px;
+}
+
+.user .avatar {
+  order: 2;
+  margin-left: 10px;
+}
+
+.bot .avatar {
+  order: 1;
+  margin-right: 10px;
+}
+
+.message .text {
+  background-color: #e0f7fa;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 14px;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+.user .text {
+  background-color: #cce5ff;
+  border-radius: 12px 12px 0 12px;
+}
+
+.bot .text {
+  background-color: #f1f1f1;
+  border-radius: 12px 12px 12px 0;
+}
   </style>
 </head>
 <body>
