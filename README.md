@@ -29,7 +29,7 @@
 ## 📂 Project Structure
 
 ```bash
-careerbot-web/
+biomedicalservive-bot/
 ├── templates/
 │   └── index.html      # Frontend UI
 ├── static/             # (Optional) CSS/JS assets
@@ -44,8 +44,8 @@ careerbot-web/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/careerbot-web.git
-cd careerbot-web
+git clone https://github.com/yourusername/biomedicalservice-bot.git
+cd biomedicalservice-bot
 ```
 
 ### 2. Install Dependencies
